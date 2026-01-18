@@ -1,5 +1,5 @@
 # tic-tac-toe
-A simple tic tac toe game
+A simple tic tac toe game in c with a bot
 
 for execute it:
 
