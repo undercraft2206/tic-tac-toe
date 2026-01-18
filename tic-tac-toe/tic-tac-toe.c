@@ -1,19 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 int main(void){
+
+    /*make variables*/
     int *player = (int *)malloc(20); /*20 -> bit allocated for the var*/
     int *bot = (int *)malloc(20);
     int game = 1;
     char a1 = '_', a2 = '_', a3 = '_', b1 = '_', b2 = '_', b3 = '_', c1 = '_', c2 = '_', c3 = '_', name[1000];
+
     system("clear");
     printf("player name: ");
     scanf("%s", &name);
     printf("\n\n  %c  %c  %c\n  %c  %c  %c\n  %c  %c  %c\n\n", a1, a2, a3, b1, b2, b3, c1, c2, c3);
-    
+
+    /*game start*/
     while(game == 1){
+
+        /*user input*/
         printf("%s: ", name);
         scanf("%s", *&player);
+
+        /*verification of player input*/
         if(*player == '1'){
             if(a1 == '_'){
                 a1 = 'X';
@@ -104,9 +113,13 @@ int main(void){
             }
         }
 
+        
+        /*bot playing*/
+        
         gobot:
-        /*bot*/
-        /*verification*/
+        
+        /*bot verification*/
+        
         /*can i won ?*/
         if((a1 == 'O') && (a2 == 'O') && (a3 == '_')){
             a3 = 'O';
@@ -213,6 +226,7 @@ int main(void){
         }
 
         /*if player will win*/
+        
         if((a1 == 'X') && (a2 == 'X') && (a3 == '_')){
             a3 = 'O';
             goto botend;
@@ -289,8 +303,9 @@ int main(void){
 
         /*random*/
         botrndstrt:
+        
         srand(time(NULL));
-        *bot = rand() %8;
+        *bot = rand() %9; /*make a random number (0-9)*/
         if(*bot == 0){
             if(a1 == '_'){
                 a1 = 'O';
@@ -365,6 +380,8 @@ int main(void){
 
 
 
+        /*end of player and bot input*/
+        
         botend:
         playerend:
         system("clear");
