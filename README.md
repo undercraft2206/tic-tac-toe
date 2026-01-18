@@ -1,4 +1,9 @@
 # tic-tac-toe
+A simple tic tac toe game
+
+for execute it:
+
+
 git clone https://github.com/undercraft2206/tic-tac-toe.git
 
 
